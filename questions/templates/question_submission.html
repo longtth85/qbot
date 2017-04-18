@@ -1,0 +1,32 @@
+{% extends "qBot/base.html" %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="inputForm">
+            <h2>New question</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label" for="title">Title (short description of the problem)</label>
+                    <div class="controls">
+                        <input class="form-control" type="text" id="title" name="title"  placeholder="Type your question here">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="body">Your question</label>
+                    <div class="controls">
+                        <textarea class="form-control vresize" rows="8" id="body" name="body" placeholder="Fill in the details here"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="tags">Tags </label>
+                    <div class="controls">
+                        <input class="form-control" type="text" id="tags" name="tags"  placeholder="Type your tags here, separated by commas">
+                    </div>
+                </div>
+                <input class="btn btn-default" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
